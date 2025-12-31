@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://yourdigitalmanager.com/sitemap.xml
 
-# Disallow admin and private areas
-Disallow: /admin/
-Disallow: /private/
-Disallow: /cgi-bin/
-Disallow: /tmp/ 
+Sitemap: https://yourdigitalmanager.xyz/sitemap.xml
