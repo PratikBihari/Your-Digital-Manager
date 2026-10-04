@@ -233,7 +233,7 @@ footer {
 /* Mobile responsive */
 @media (max-width: 1024px) {
     .legal-page .container {
-        padding: 0 3%;
+        padding: 2rem 3%;
     }
 }
 
@@ -253,7 +253,7 @@ footer {
     .nav-links {
         display: none;
         position: fixed;
-        top: 90px;
+        top: 80px;
         left: 0;
         width: 100%;
         flex-direction: column;
@@ -262,6 +262,8 @@ footer {
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 999;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
     }
     
     .nav-links.active {
@@ -290,7 +292,7 @@ footer {
     }
     
     .legal-page .container {
-        padding: 0 4%;
+        padding: 2rem 4%;
     }
 
     .legal-page h1 {
@@ -336,7 +338,7 @@ footer {
     }
     
     .legal-page .container {
-        padding: 0 3%;
+        padding: 1.5rem 3%;
     }
 
     .legal-page h1 {
@@ -381,6 +383,6 @@ footer {
     }
     
     .legal-page .container {
-        padding: 0 2%;
+        padding: 1rem 2%;
     }
 }
