@@ -338,8 +338,13 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const target = entry.target;
-                    const finalNumber = parseInt(target.textContent.replace(/\D/g, ''));
-                    const suffix = target.textContent.replace(/\d/g, '');
+                    // Animate only the leading number, keeping decimals and any
+                    // surrounding text intact (e.g. "4.9/5", "300+", "98%")
+                    const match = target.textContent.match(/^(\D*)(\d+(?:\.\d+)?)(.*)$/);
+                    if (!match) return;
+                    const [, prefix, numberText, suffix] = match;
+                    const finalNumber = parseFloat(numberText);
+                    const decimals = (numberText.split('.')[1] || '').length;
                     let current = 0;
                     const increment = finalNumber / 50;
                     const timer = setInterval(() => {
@@ -348,7 +353,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             current = finalNumber;
                             clearInterval(timer);
                         }
-                        target.textContent = Math.floor(current) + suffix;
+                        const shown = decimals ? current.toFixed(decimals) : Math.floor(current);
+                        target.textContent = prefix + shown + suffix;
                     }, 30);
                     observer.unobserve(target);
                 }
