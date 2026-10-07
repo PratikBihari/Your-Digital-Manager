@@ -27,7 +27,7 @@ if (menuBtn && navLinks) {
     
     // Close menu on window resize
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1024) {
             navLinks.classList.remove('active');
             menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             document.body.style.overflow = 'auto';
@@ -41,7 +41,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         
         // Close mobile menu if open
-        if (window.innerWidth <= 768 && navLinks && menuBtn) {
+        if (window.innerWidth <= 1024 && navLinks && menuBtn) {
             navLinks.classList.remove('active');
             menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             document.body.style.overflow = 'auto';
@@ -65,7 +65,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Close mobile menu when clicking nav links
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-        if (window.innerWidth <= 768 && navLinks && menuBtn) {
+        if (window.innerWidth <= 1024 && navLinks && menuBtn) {
             navLinks.classList.remove('active');
             menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             document.body.style.overflow = 'auto';
