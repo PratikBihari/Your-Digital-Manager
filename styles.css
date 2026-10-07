@@ -3867,12 +3867,12 @@ footer {
         margin-bottom: 2rem;
     }
     
-    .stat-item {
+    .stats-overview .stat-item {
         padding: 1rem;
         min-width: 100px;
     }
     
-    .stat-number {
+    .stats-overview .stat-number {
         font-size: 1.5rem;
     }
     
@@ -3969,7 +3969,7 @@ footer {
         gap: 1rem;
     }
     
-    .stat-item {
+    .stats-overview .stat-item {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -4482,5 +4482,54 @@ footer {
     
     .blog-card {
         padding: 1.2rem;
+    }
+}
+
+/* Responsive overrides
+   Placed last so they win over page-specific rules declared after the
+   main breakpoints (e.g. the about page's .about-content grid). */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    font-family: inherit;
+}
+
+@media (max-width: 1024px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-stats .stat-item {
+        min-width: 0;
+        padding: 1.25rem 0.75rem;
+    }
+
+    .about-stats .stat-number {
+        font-size: 2rem;
+    }
+
+    .about-stats .stat-label {
+        font-size: 0.8rem;
+        letter-spacing: 0;
+    }
+
+    .category-tab {
+        flex: 1 1 calc(50% - 0.5rem);
+    }
+
+    .service-badge {
+        top: 12px;
+        right: 12px;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
     }
 }
